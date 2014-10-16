@@ -1,0 +1,134 @@
+% Für Seitenformatierung
+
+\documentclass[DIV=15]{scrartcl}
+
+% Zeilenumbrüche
+
+\parindent 0pt
+\parskip 6pt
+
+% Für deutsche Buchstaben und Synthax
+
+\usepackage[ngerman]{babel}
+
+% Für Auflistung mit speziellen Aufzählungszeichen
+
+\usepackage{paralist}
+
+% zB für \del, \dif und andere Mathebefehle
+
+\usepackage{amsmath}
+\usepackage{commath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+% Für \SIunit[]{} und \num in deutschem Stil
+
+ \usepackage[output-decimal-marker={,}]{siunitx}
+ \DeclareSIUnit\clight{\ensuremath{c}}
+
+% Schriftart und encoding
+
+\usepackage[utf8]{inputenc}
+
+% Bitstream charter als default
+
+\usepackage[charter, greekuppercase=italicized]{mathdesign}
+
+% Lato, als sans default
+
+\renewcommand{\sfdefault}{fla}
+
+% Für \sfrac{}{}, also inline-frac
+
+\usepackage{xfrac}
+
+% Für Einbinden von pdf-Grafiken
+
+\usepackage{graphicx}
+
+% TikZ
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+% Für weitere Farben
+
+\usepackage{color}
+
+% Für Streichen von z.B. $\rightarrow$
+
+\usepackage{centernot}
+
+% Für Befehl \cancel{}
+
+\usepackage{cancel}
+\newcommand\ccancel[2][black]{\renewcommand\CancelColor{\color{#1}}\cancel{#2}}
+
+% Für Links nach außen und innerhalb des Dokumentes
+
+\usepackage{hyperref}
+
+% Für Layout von Links
+
+\hypersetup{
+	citecolor=black,
+	colorlinks=true,
+	linkcolor=black,
+	urlcolor=blue,
+}
+
+% Verschiedene Mathematik-Hilfen
+
+% Manuelles taggen z.B. in align*-Umgebung
+
+\newcommand\mantag{\stepcounter{equation}\tag{\theequation}}
+
+\newcommand \e[1]{\cdot10^{#1}}
+\newcommand\p{\partial}
+
+\newcommand\half{\frac 12}
+\newcommand\shalf{\sfrac12}
+
+\newcommand\skp[2]{\left\langle#1,#2\right\rangle}
+\newcommand\mw[1]{\left\langle#1\right\rangle}
+
+\newcommand \ee{\mathrm e}
+\newcommand \eexp[1]{\mathrm{e}^{#1}}
+\newcommand \dexp[1]{\exp\left({#1}\right)}
+
+% Trigonometrische Funktionen mit Argument in Klammern
+
+\newcommand \dsin[1]{\sin\left({#1}\right)}
+\newcommand \dcos[1]{\cos\left({#1}\right)}
+\newcommand \dtan[1]{\tan\left({#1}\right)}
+\newcommand \darccos[1]{\arccos\left({#1}\right)}
+\newcommand \darcsin[1]{\arcsin\left({#1}\right)}
+\newcommand \darctan[1]{\arctan\left({#1}\right)}
+
+\newcommand{\ui}[1]{\int_{-\infty}^{\infty}\dif {#1}\;}
+
+% Für fette, serifenlose Matrix
+
+\newcommand \mat[1]{\mathbf{#1}}
+
+% Nabla und Kombinationen von Nabla
+
+\renewcommand\div[1]{\skp{\nabla}{#1}}
+\newcommand\rot{\nabla\times}
+\newcommand\grad[1]{\nabla#1}
+\newcommand\laplace{\triangle}
+\newcommand\dalambert{\mathop{{}\Box}\nolimits}
+
+%Für komplexe Zahlen
+
+\newcommand \ii{\mathrm i}
+\renewcommand{\Im}{\mathop{{}\mathrm{Im}}\nolimits}
+\renewcommand{\Re}{\mathop{{}\mathrm{Re}}\nolimits}
+
+%Für Bra-Ket-Notation
+
+\newcommand\bra[1]{\left\langle#1\right|}
+\newcommand\ket[1]{\left|#1\right\rangle}
+\newcommand\braket[2]{\left\langle#1\left.\vphantom{#1 #2}\right|#2\right\rangle}
+\newcommand\braopket[3]{\left\langle#1\left.\vphantom{#1 #2 #3}\right|#2\left.\vphantom{#1 #2 #3}\right|#3\right\rangle}
